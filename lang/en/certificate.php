@@ -190,7 +190,7 @@ $string['title'] = 'CERTIFICATE of ACHIEVEMENT';
 $string['to'] = 'Awarded to';
 /* START Academy Patch M#015 Add Custom Certificate Template */
 $string['typeA4_academy'] = 'A4 Academy';
-$string['typeA4_academy_plain'] = 'A4 Academy Plain';
+$string['typeA4_academy_nz_ce'] = 'A4 Academy NZ CE';
 $string['typeA4_arel'] = 'A4 AREL';
 /* END Academy Patch M#015 */
 $string['typeA4_embedded'] = 'A4 Embedded';

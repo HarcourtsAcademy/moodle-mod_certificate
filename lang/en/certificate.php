@@ -188,8 +188,11 @@ $string['summaryofattempts'] = 'Summary of Previously Received Certificates';
 $string['textoptions'] = 'Text Options';
 $string['title'] = 'CERTIFICATE of ACHIEVEMENT';
 $string['to'] = 'Awarded to';
-$string['typeA4_academy'] = 'A4 Academy'; /* Academy Patch M#015 Add Academy Certificate Template */
-$string['typeA4_arel'] = 'A4 AREL'; /* Academy Patch M#015 Add AREL Certificate Template */
+/* START Academy Patch M#015 Add Custom Certificate Template */
+$string['typeA4_academy'] = 'A4 Academy';
+$string['typeA4_academy_plain'] = 'A4 Academy Plain';
+$string['typeA4_arel'] = 'A4 AREL';
+/* END Academy Patch M#015 */
 $string['typeA4_embedded'] = 'A4 Embedded';
 $string['typeA4_non_embedded'] = 'A4 Non-Embedded';
 $string['typeletter_embedded'] = 'Letter Embedded';

@@ -70,7 +70,7 @@ certificate_print_text($pdf, $x + 99, $y + 112, 'L', 'Helvetica', null, 10, cert
 if ($certificate->printhours) {
     certificate_print_text($pdf, $x + 98.5, $y + 145, 'L', 'Helvetica', null, 14, get_string('credithours', 'certificate') . ': ' . $certificate->printhours);
 }
-certificate_print_text($pdf, $x + 124, $y + 140, 'L', 'Helvetica', null, 14, certificate_get_code($certificate, $certrecord));
+certificate_print_text($pdf, $x + 125, $y + 140, 'L', 'Helvetica', null, 14, certificate_get_code($certificate, $certrecord));
 
 $i = 0;
 if ($certificate->printteacher) {

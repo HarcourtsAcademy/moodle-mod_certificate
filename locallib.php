@@ -1190,6 +1190,15 @@ function certificate_print_image($pdf, $certificate, $type, $x, $y, $w, $h) {
             case '' :
                 break;
             default :
+                /* START Academy Patch M#038 Enable SVG image support in mod_certificate */
+                if (file_exists($path) && TCPDF_IMAGES::getImageFileType($path) == 'svg') {
+                    $pdf->ImageSVG($path, $x, $y, $w, $h);
+                }
+                if (file_exists($uploadpath) && TCPDF_IMAGES::getImageFileType($path) == 'svg') {
+                    $pdf->ImageSVG($uploadpath, $x, $y, $w, $h);
+                }
+                /* END Academy Patch M#038 */
+                
                 if (file_exists($path)) {
                     $pdf->Image($path, $x, $y, $w, $h);
                 }
@@ -1238,9 +1247,12 @@ function certificate_scan_image_dir($path) {
         foreach ($iterator as $fileinfo) {
             $filename = $fileinfo->getFilename();
             $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-            if ($fileinfo->isFile() && in_array($extension, array('png', 'jpg', 'jpeg'))) {
+            /* START Academy Patch M#038 Enable SVG image support in mod_certificate */
+            // if ($fileinfo->isFile() && in_array($extension, array('png', 'jpg', 'jpeg'))) {
+            if ($fileinfo->isFile() && in_array($extension, array('png', 'jpg', 'jpeg', 'svg'))) {
                 $options[$filename] = pathinfo($filename, PATHINFO_FILENAME);
             }
+            /* END Academy Patch M#038 */
         }
     }
     return $options;

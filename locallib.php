@@ -1192,10 +1192,12 @@ function certificate_print_image($pdf, $certificate, $type, $x, $y, $w, $h) {
             default :
                 /* START Academy Patch M#038 Enable SVG image support in mod_certificate */
                 if (file_exists($path) && TCPDF_IMAGES::getImageFileType($path) == 'svg') {
-                    $pdf->ImageSVG($path, $x, $y, $w, $h);
+                    $file = file_get_contents($path); // Work around TCPDF bug that fails to read the file using the url HTTP_HOST . $path
+                    $pdf->ImageSVG('@'.$file, $x, $y, $w, $h);
                 }
                 if (file_exists($uploadpath) && TCPDF_IMAGES::getImageFileType($path) == 'svg') {
-                    $pdf->ImageSVG($uploadpath, $x, $y, $w, $h);
+                    $file = file_get_contents($uploadpath); // Work around TCPDF bug that fails to read the file using the url HTTP_HOST . $path
+                    $pdf->ImageSVG('@'.$uploadpath, $x, $y, $w, $h);
                 }
                 /* END Academy Patch M#038 */
                 

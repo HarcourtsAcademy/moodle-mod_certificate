@@ -65,12 +65,12 @@ $pdf->SetTextColor(108, 163, 80);
 certificate_print_text($pdf, $x, $y + 22, 'C', 'Helvetica', 'B', 36,  "Real estate continuing professional development");
 $pdf->SetTextColor(0, 0, 0);
 certificate_print_text($pdf, $x, $y + 60, 'C', 'Helvetica', null, 30,  "Verifiable " . $certificate->customtext);
-certificate_print_text($pdf, $x, $y + 80, 'C', 'Helvetica', null, 20,  "This is to certify that on");
-certificate_print_text($pdf, $x, $y + 90, 'C', 'Helvetica', null, 20,  certificate_get_date($certificate, $certrecord, $course));
+certificate_print_text($pdf, $x, $y + 80, 'C', 'Helvetica', null, 20,  "This is to certify that on "
+            . certificate_get_date($certificate, $certrecord, $course));
 certificate_print_text($pdf, $x, $y + 100, 'C', 'Helvetica', 'B', 30, fullname($USER));
 certificate_print_text($pdf, $x, $y + 115, 'C', 'Helvetica', null, 20, $USER->profile['licenseenumber']);
 if ($certificate->printhours) {
-    $certificatesummary = "Completed ".$certificate->printhours." hours verifiable continuing education (".$course->shortname.") as required "
+    $certificatesummary = "Completed ".$certificate->printhours." hours verifiable continuing education as required "
             . "under Section 15 of the Real Estate Agents Act 2008";
     certificate_print_text($pdf, $x + 40, $y + 140, 'C', 'Helvetica', null, 14, $certificatesummary, 200);
 }

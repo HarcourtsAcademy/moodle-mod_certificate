@@ -197,6 +197,7 @@ $string['to'] = 'Awarded to';
 $string['typeA4_academy'] = 'A4 Academy';
 $string['typeA4_academy_istart'] = 'A4 Academy iStart';
 $string['typeA4_academy_nz_ce'] = 'A4 Academy NZ CE';
+$string['typeA4_academy_nz_cpd_2019'] = 'A4 Academy NZ CPD 2019';
 $string['typeA4_academy_workshop'] = 'A4 Academy Workshop';
 $string['typeA4_arel'] = 'A4 AREL';
 /* END Academy Patch M#015 */
